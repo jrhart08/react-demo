@@ -1,0 +1,16 @@
+.ticker > span {
+    display: block;
+}
+
+.symbol {
+    color: #777;
+    font-size: 1.5em;
+}
+
+.price.green {
+    color: green;
+}
+
+.price.red {
+    color: red;
+}
