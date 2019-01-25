@@ -5,6 +5,7 @@ import {
   Context as CollapseContext,
   CollapseLine,
   ViewAll,
+  withCollapseContext,
 } from '../../component-library/collapsibles';
 
 
@@ -12,7 +13,7 @@ import {
 const Minimizable = styled.div`
   border: 1px solid black;
   overflow-y: hidden;
-  
+
   ${props => props.minimized && css`
     max-height: 200px;
   `}
@@ -38,6 +39,9 @@ const SectionTitle = styled(SecondaryText)`
   font-size: 1.5em;
 `;
 
+const ConnectedMinimizable = withCollapseContext(({ collapsed, ...rest }) => (
+  <Minimizable minimized={collapsed} {...rest} />
+));
 
 // component
 const CollapsiblePeopleList = () => (
@@ -46,25 +50,15 @@ const CollapsiblePeopleList = () => (
       <SectionTitle>Collapsible Section Label</SectionTitle>
       <ViewAllRight />
     </div>
-    <CollapseContext.Consumer>
-      {
-        (context) => {
-          const { collapsed } = context;
-
-          return (
-            <Minimizable minimized={collapsed}>
-              <Square color="blue" />
-              <Square color="purple" />
-              <Square color="magenta" />
-              <Square color="red" />
-              <Square color="orange" />
-              <Square color="yellow" />
-              <Square color="green" />
-            </Minimizable>
-          );
-        }
-      }
-    </CollapseContext.Consumer>
+    <ConnectedMinimizable>
+      <Square color="blue" />
+      <Square color="purple" />
+      <Square color="magenta" />
+      <Square color="red" />
+      <Square color="orange" />
+      <Square color="yellow" />
+      <Square color="green" />
+    </ConnectedMinimizable>
     <CollapseLineUppercase />
   </CollapseContext.Provider>
 );
