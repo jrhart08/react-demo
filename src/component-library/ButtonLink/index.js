@@ -6,6 +6,7 @@ const ButtonLink = styled.button`
   padding: 0;
   font: inherit;
   cursor: pointer;
+  background-color: inherit;
 
   &:hover {
     text-decoration: underline;
