@@ -14,10 +14,8 @@ class Mouse extends React.Component {
 
   render() {
     return (
-      <div>
-        <div style={{ height: 1000 }} onMouseMove={this.handleMouseMove}>
-          <this.props.dotRenderer {...this.state} />
-        </div>
+      <div style={{ height: 1000 }} onMouseMove={this.handleMouseMove}>
+        <this.props.dotRenderer {...this.state} />
       </div>
     );
   }
