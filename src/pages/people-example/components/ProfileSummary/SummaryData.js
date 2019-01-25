@@ -1,5 +1,5 @@
 import React from 'react';
-import SecondaryText from '../../component-library/SecondaryText';
+import SecondaryText from '../../../../component-library/SecondaryText';
 
 const SummaryData = ({ title, text }) => (
   <h1>

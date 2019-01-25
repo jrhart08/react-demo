@@ -1,15 +1,12 @@
-import { connect } from 'react-redux';
-import { getPeople } from '../../actions/people';
-import PeopleExample from './PeopleExample';
+import React from 'react';
+import { Provider } from 'react-redux';
+import People from './components/People';
+import configureStore from './store/configureStore';
 
-const mapStateToProps = (state) => {
-  return {
-    people: state.people.people,
-  };
-};
+const store = configureStore();
 
-const mapDispatchToProps = dispatch => ({
-  getPeople: () => dispatch(getPeople()),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(PeopleExample);
+export default () => (
+  <Provider store={store}>
+    <People />
+  </Provider>
+);
