@@ -8,6 +8,7 @@ const headers = {
  'Accept': 'application/json',
 };
 
+// To go on dashboard, header, marquee, etc.
 class Ticker extends Component {
   constructor(props) {
     super(props);

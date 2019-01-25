@@ -14,14 +14,14 @@ const getText = (collapsed, fullCount) => {
 /**
 A "View All/Less" link preconfigured with a context consumer and `onClick` handler.
 */
-const ViewAll = props => (
+const ViewAll = ({ fullCount, ...rest }) => (
   <Context.Consumer>
     {
       (context) => {
-        const { fullCount, collapsed, toggleCollapsed } = context;
+        const { collapsed, toggleCollapsed } = context;
 
         return (
-          <ButtonLink onClick={toggleCollapsed} {...props}>
+          <ButtonLink onClick={toggleCollapsed} {...rest}>
             {getText(collapsed, fullCount)}
           </ButtonLink>
         );

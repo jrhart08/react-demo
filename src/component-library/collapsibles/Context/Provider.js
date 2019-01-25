@@ -19,7 +19,6 @@ class CollapseContextProvider extends React.Component {
 
   render() {
     const contextValue = {
-      fullCount: this.props.fullCount,
       collapsed: this.state.collapsed,
       collapse: this.collapse,
       expand: this.expand,
@@ -31,16 +30,10 @@ class CollapseContextProvider extends React.Component {
 }
 
 CollapseContextProvider.propTypes = {
-  /**
-  Passed to Consumers.
-  If fullCount is provided, ViewAll component will show \`View All (${fullCount})`.
-  */
-  fullCount: PropTypes.number,
   defaultState: PropTypes.oneOf(['collapsed', 'expanded']),
 };
 
 CollapseContextProvider.defaultProps = {
-  fullCount: null,
   defaultState: 'collapsed',
 };
 

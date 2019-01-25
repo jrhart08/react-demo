@@ -4,8 +4,8 @@ export default ({ x, y }) => (
   <div
     style={{
       position: 'absolute',
-      left: x,
-      top: y,
+      left: x - 25,
+      top: y - 25,
       width: 50,
       height: 50,
       backgroundColor: 'red',
