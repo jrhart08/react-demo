@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router';
+import random from 'lodash/random';
 import './Ticker.css';
+
+function flipCoin() {
+  return Boolean(random(1, false));
+}
 
 const baseUri = 'https://api.iextrading.com/1.0';
 const headers = {
@@ -31,13 +36,29 @@ class Ticker extends Component {
     });
   };
 
+  // ¯\_(ツ)_/¯
+  fetchDummyData = () => {
+    const { symbol } = this.props.match.params;
+    
+    this.setState({
+      quote: {
+        symbol,
+        latestPrice: 200,
+        open: flipCoin() ? 205 : 195,
+      },
+      isLoaded: true,
+    })
+
+    return Promise.resolve();
+  };
+
   componentDidMount() {
-    this.fetchData();
+    this.fetchDummyData();
   }
 
   componentWillReceiveProps(props) {
     if (this.props.match.params.symbol !== props.match.params.symbol) {
-      this.fetchData();
+      this.fetchDummyData();
     }
   }
 
