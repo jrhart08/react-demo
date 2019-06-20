@@ -10,7 +10,7 @@ import ChoiceSectionHeader from '@gcc/pip-components/dist/ChoiceSectionHeader';
 import OptionWarningMessages from '@gcc/pip-components/dist/WarningMessage';
 import { OptionErrorMessages } from '@gcc/pip-components/dist/ErrorMessage';
 import withIsMobile from '@gcc/pip-components/dist/withIsMobile';
-import ConfiguratorTemplate from '../ConfiguratorTemplate';
+import makeConfiguratorTemplate from './makeConfiguratorTemplate';
 import { OptionLabel } from '../OptionLabel';
 
 class ColorDropdownTemplate extends React.Component {
@@ -101,5 +101,5 @@ export default flow(
   // include `isMobile` prop
   withIsMobile,
   // connect to redux
-  ConfiguratorTemplate,
+  makeConfiguratorTemplate,
 )(ColorDropdownTemplate);
