@@ -3,7 +3,7 @@ import SecondaryText from '../../../../component-library/SecondaryText';
 
 const SummaryData = ({ title, text }) => (
   <h1>
-    [{title}]: <SecondaryText>{text}</SecondaryText>
+    「{title}」: <SecondaryText>{text}</SecondaryText>
   </h1>
 );
 
