@@ -9,11 +9,16 @@ export default function useFriendStatus(friendID) {
   const [isOnline, setIsOnline] = useState(null);
 
   useEffect(() => {
+    // (function body)
+    // similar to componentDidMount and componentDidUpdate
     function handleStatusChange(status) {
       setIsOnline(status.isOnline);
     }
 
     ChatAPI.subscribeToFriendStatus(friendID, handleStatusChange);
+
+    // (function return value)
+    // similar to componentWillUnmount
     return () => {
       ChatAPI.unsubscribeFromFriendStatus(friendID, handleStatusChange);
     };
