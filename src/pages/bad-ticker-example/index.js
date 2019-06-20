@@ -3,9 +3,6 @@ import { withRouter } from 'react-router';
 import random from 'lodash/random';
 import './Ticker.css';
 
-function flipCoin() {
-  return Boolean(random(1, false));
-}
 
 const baseUri = 'https://api.iextrading.com/1.0';
 const headers = {
@@ -39,17 +36,14 @@ class Ticker extends Component {
   // ¯\_(ツ)_/¯
   fetchDummyData = () => {
     const { symbol } = this.props.match.params;
-    
     this.setState({
       quote: {
         symbol,
-        latestPrice: 200,
-        open: flipCoin() ? 205 : 195,
+        latestPrice: random(100, 200),
+        open: random(100, 200),
       },
       isLoaded: true,
-    })
-
-    return Promise.resolve();
+    });
   };
 
   componentDidMount() {
