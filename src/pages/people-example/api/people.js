@@ -6,7 +6,7 @@ const makePeople = () => [
     firstName: 'Alice',
     lastName: 'Abernathy',
     address: '123 Any Street',
-    profilePicture: 'https://i.redd.it/usdpqxtzkfc21.jpg',
+    profilePicture: 'https://i.redd.it/p0vziefbgw431.jpg',
     occupation: 'Software Developer',
     stand: 'Star Platinum'
   },
@@ -14,7 +14,7 @@ const makePeople = () => [
     id: 2,
     firstName: 'Bill',
     lastName: 'Brooks',
-    address: '456 Boulevard Boulevard',
+    address: '456 Busy Boulevard',
     profilePicture: 'https://i.redd.it/x2bgwxc14ec21.jpg',
     occupation: 'Math Teacher',
     stand: 'Cheap Trick',
